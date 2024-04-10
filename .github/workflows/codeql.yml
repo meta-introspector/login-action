@@ -34,7 +34,7 @@ jobs:
         uses: meta-introspector/checkout@v4
       -
         name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: meta-introspector/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
           config: |
@@ -42,9 +42,9 @@ jobs:
               - src
       -
         name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+        uses: meta-introspector/codeql-action/autobuild@v3
       -
         name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: meta-introspector/codeql-action/analyze@v3
         with:
           category: "/language:${{matrix.language}}"
